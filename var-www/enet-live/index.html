@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>eNET // Live Cam & Chat 18+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;background:#050208;color:#f0e6ff;font-family:monospace}
+.header{padding:1rem;text-align:center;border-bottom:1px solid #2a1535}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;padding:1rem}
+.card{background:#0c0610;border:1px solid #2a1535;border-radius:10px;padding:1rem}
+.btn{background:linear-gradient(135deg,#ff2a6d,#c77dff);color:#fff;padding:.6rem 1rem;border:none;border-radius:6px;cursor:pointer}
+#chat{height:300px;overflow-y:auto;background:#000;padding:1rem;margin:1rem 0;border:1px solid #2a1535}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>eNET LIVE</h1>
+  <p>Camgirl · Webchat 18+ · Più elevato di OnlyFans</p>
+</div>
+<div class="grid">
+  <div class="card">
+    <h3>Mistress_Valkyria</h3>
+    <p>Live ora · $DSN gated</p>
+    <button class="btn" onclick="joinRoom('valkyria')">Entra in room</button>
+  </div>
+  <div class="card">
+    <h3>CyberRose</h3>
+    <p>Private show disponibile</p>
+    <button class="btn" onclick="joinRoom('cyberrose')">Richiedi private</button>
+  </div>
+</div>
+<div id="chat"></div>
+<input id="msg" placeholder="Scrivi a K.I.R.A. / Cam..." style="width:70%;padding:.5rem;background:#0c0610;color:#fff;border:1px solid #2a1535">
+<button class="btn" onclick="send()">Invia</button>
+<script>
+function joinRoom(id){document.getElementById('chat').innerHTML+='<div>[Sistema] Connesso a '+id+'</div>';}
+function send(){
+  const m=document.getElementById('msg').value;
+  if(!m)return;
+  document.getElementById('chat').innerHTML+='<div>Tu: '+m+'</div>';
+  document.getElementById('msg').value='';
+  // Inoltra a K.I.R.A. backend
+  fetch('http://5.189.180.13:8081/').then(r=>r.json()).then(j=>{
+    document.getElementById('chat').innerHTML+='<div style="color:#ff2a6d">K.I.R.A.: '+(j.voice||'In ascolto.')+'</div>';
+  }).catch(()=>{});
+}
+</script>
+</body>
+</html>

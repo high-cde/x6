@@ -1,0 +1,13 @@
+*.env
+.env*
+*.key
+*.pem
+*.sqlite
+*.db
+id_rsa
+id_ed25519
+*.p12
+*.pfx
+node_modules/
+__pycache__/
+*.log

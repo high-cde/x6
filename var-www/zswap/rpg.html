@@ -1,0 +1,16 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZSwap • Pinguino RPG</title><link rel="icon" href="assets/penguin.svg"><link rel="stylesheet" href="style.css">
+<style>
+main{max-width:520px;margin:0 auto;padding:12px}.av{width:120px;height:120px;image-rendering:pixelated;display:block;margin:8px auto;animation:pidle 1.4s steps(4) infinite alternate}
+@keyframes pidle{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+.bub{background:#fff;color:#1a1530;border:4px solid #1a1530;box-shadow:6px 6px 0 #7b2ff7;padding:12px;font-family:ui-monospace,monospace;min-height:3em}
+.bar{height:14px;background:#0b0618;border:2px solid #fff3;margin:4px 0 10px}.bar i{display:block;height:100%;transition:width .3s steps(5)}
+.hp i{background:#4ade80}.xp i{background:#ffc93c}.acts{display:grid;gap:8px}
+#cf{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;image-rendering:pixelated}
+@media (prefers-reduced-motion:reduce){.av{animation:none}}
+</style></head><body>
+<header><a href="index.html" class="logo"><img class="px" src="assets/penguin.svg" width="34" height="34" alt=""><b>Z</b>Swap • Pinguino RPG</a><div class="hbtns"><a class="btn ghost" href="index.html">Torna a ZSwap</a></div></header>
+<main><section class="card"><img class="av" src="assets/penguin.svg" alt="Pinguino"><div class="bub" id="msg"></div></section>
+<section class="card" id="game"></section></main>
+<footer>© 2026 ZDOS1.3 — P.IVA 11040550961 · Gioco per divertimento: nessun token, nessun premio reale.</footer>
+<canvas id="cf"></canvas><script src="rpg.js"></script></body></html>
